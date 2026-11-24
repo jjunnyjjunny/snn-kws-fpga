@@ -1,0 +1,22 @@
+--- ../ref/ZSK_Design_Top.v	2026-10-25 21:30:59.137943073 +0900
++++ ZSK_Design_Top.v	2026-10-28 19:06:23.495195238 +0900
+@@ -81,6 +81,7 @@
+ wire [23:0] audio_r_in;
+ wire [23:0] audio_l_out;
+ wire [23:0] audio_r_out;
++wire        new_sample;    // KWS: explicit declaration (was an implicit wire), now routed to user_logic
+ 
+ 
+ /***********************************************************************
+@@ -160,7 +161,10 @@
+ .audio_l_in          (audio_l_in    ),
+ .audio_r_in          (audio_r_in    ),
+ .audio_l_out         (audio_l_out   ),
+-.audio_r_out         (audio_r_out   )
++.audio_r_out         (audio_r_out   ),
++.new_sample          (new_sample    ),  // KWS: added
++.i2s_lr              (AC_GPIO3      ),  // KWS: ILA taps (codec LRCLK / BCLK pins)
++.i2s_bclk            (AC_GPIO2      )
+ );
+ 
+ 

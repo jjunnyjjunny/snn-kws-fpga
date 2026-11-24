@@ -1,0 +1,35 @@
+{
+ "n_slots": 210,
+ "duration_s": 530.0,
+ "cadence_s": 2.5,
+ "clip_offset_s": 0.5,
+ "lead_s": 3.0,
+ "seed": 1,
+ "plan": {
+  "yes": 25,
+  "no": 25,
+  "stop": 25,
+  "go": 25,
+  "up": 10,
+  "down": 10,
+  "left": 10,
+  "right": 10,
+  "on": 10,
+  "off": 10,
+  "unknown": 40,
+  "silence": 10
+ },
+ "wav_peak_dbfs": 0.0,
+ "keyword_clip_peak_dbfs_mean": -7.158882141113281,
+ "keyword_clip_peak_dbfs_p10_p90": [
+  -16.715545654296875,
+  -1.378293514251709
+ ],
+ "cal_ref_clip_peaks_dbfs": [
+  -7.037424087524414,
+  -7.256505966186523,
+  -6.9425859451293945,
+  -6.798762798309326,
+  -7.009457588195801
+ ]
+}

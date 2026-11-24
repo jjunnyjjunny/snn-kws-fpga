@@ -1,0 +1,11 @@
+# yosys_kws_top.ys — open-source pre-check: synth_xilinx (xc7) estimate of kws_top resources (Yosys estimate, not Vivado)
+#   yosys -q -s yosys_kws_top.ys   (run from snn/rtl; ROM paths are relative to this directory)
+read_verilog -defer fe/fe_in_scale.v fe/fe_ring.v fe/fe_buf.v fe/fe_window.v fe/fe_fft512.v fe/fe_power.v fe/fe_mel_log.v fe/fe_top.v
+read_verilog -defer wrom.v prom.v spike_hist.v feat_hist.v row_acc.v lif_update.v out_integrator.v decision.v snn_ctrl.v snn_core.v
+read_verilog -defer vad.v preroll_buf.v decision_seg.v clk_gate_buf.v kws_top.v
+chparam -set ROM_DIR "../rom" -set MEM_PREFIX "../rom/m3k3" kws_top
+hierarchy -top kws_top
+synth_xilinx -family xc7 -top kws_top
+tee -o reports/yosys_kws_top_stat.txt stat -tech xilinx
+tee -a reports/yosys_kws_top_stat.txt stat -tech xilinx -top kws_top
+write_json reports/yosys_kws_top.json

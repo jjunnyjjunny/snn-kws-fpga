@@ -1,0 +1,12 @@
+`verilator_config
+// intentional lint waivers for kws_top and user_logic (see REPORT_week4a C-1)
+// unused debug outputs left unconnected on purpose (cur, dbg_*, e0_out, cnt_*, snn_frame_done)
+lint_off -rule PINCONNECTEMPTY
+// width warnings from parameter arithmetic (values fit; verified by the golden-vector simulations)
+lint_off -rule WIDTHTRUNC
+lint_off -rule WIDTHEXPAND
+lint_off -rule DECLFILENAME
+lint_off -rule UNUSEDSIGNAL
+lint_off -rule UNUSEDPARAM
+// clk_gate_buf.v simulation model of BUFGCE: en_l has an initial value by design (clock stopped until CE is sampled)
+lint_off -rule PROCASSINIT -file "*clk_gate_buf.v"

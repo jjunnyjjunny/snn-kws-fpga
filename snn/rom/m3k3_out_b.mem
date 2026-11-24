@@ -1,0 +1,14 @@
+// out per-neuron bias current (16-bit two's complement), added every frame
+// width=16 depth=12
+ffff
+0000
+fffd
+fffd
+ffff
+ffff
+ffff
+fffe
+fffe
+ffff
+0007
+0001

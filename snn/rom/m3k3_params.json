@@ -1,0 +1,77 @@
+{
+ "model": "M3",
+ "v_bits_hidden": 16,
+ "v_bits_out": 24,
+ "layers": [
+  {
+   "name": "tcn1",
+   "type": "tcn",
+   "n_pre": 120,
+   "n_post": 64,
+   "bits": 8,
+   "in_shift": 6,
+   "k": 3,
+   "q_real_per_int": 0.013232384141035907,
+   "theta_min": 20,
+   "theta_max": 121,
+   "K": 3,
+   "dilation": 1,
+   "tap_layout": "pre index = tap*n_in_channels + channel, tap j uses input at t - j*dilation"
+  },
+  {
+   "name": "tcn2",
+   "type": "tcn",
+   "n_pre": 192,
+   "n_post": 64,
+   "bits": 8,
+   "in_shift": 0,
+   "k": 3,
+   "q_real_per_int": 0.018060881321824443,
+   "theta_min": 38,
+   "theta_max": 79,
+   "K": 3,
+   "dilation": 2,
+   "tap_layout": "pre index = tap*n_in_channels + channel, tap j uses input at t - j*dilation"
+  },
+  {
+   "name": "tcn3",
+   "type": "tcn",
+   "n_pre": 192,
+   "n_post": 64,
+   "bits": 8,
+   "in_shift": 0,
+   "k": 3,
+   "q_real_per_int": 0.014313172167680395,
+   "theta_min": 42,
+   "theta_max": 109,
+   "K": 3,
+   "dilation": 4,
+   "tap_layout": "pre index = tap*n_in_channels + channel, tap j uses input at t - j*dilation"
+  },
+  {
+   "name": "tcn4",
+   "type": "tcn",
+   "n_pre": 192,
+   "n_post": 64,
+   "bits": 8,
+   "in_shift": 0,
+   "k": 3,
+   "q_real_per_int": 0.014654204601377953,
+   "theta_min": 26,
+   "theta_max": 88,
+   "K": 3,
+   "dilation": 8,
+   "tap_layout": "pre index = tap*n_in_channels + channel, tap j uses input at t - j*dilation"
+  },
+  {
+   "name": "out",
+   "type": "out",
+   "n_pre": 64,
+   "n_post": 12,
+   "bits": 8,
+   "in_shift": 0,
+   "k": 3,
+   "q_real_per_int": 0.04591276138786256
+  }
+ ]
+}

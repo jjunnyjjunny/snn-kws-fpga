@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+# datasets / features / checkpoints
+snn/data/*.npz
+snn/data/speech_commands*/
+snn/runs/
+*.pt
+*.pth
+*.npy
+# logs
+snn/logs/
+*.log
+!snn/rtl/reports/yosys_kws_top.log
+# simulation build outputs
+snn/tb/build/
+snn/tb/*/build/
+*.vcd
+*.fst
+# Vivado / Vitis
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.gen/
+*.srcs/
+.Xil/
+*.jou
+*.str
+*.dcp
+*.bit
+*.ltx
+*.xpr
+*.wdb
+vivado_kws/
+vitis_ws*/
+reports_power*/
+# board logs (raw ILA CSV) and local scratch
+snn/board/log/
+snn/board/play/*.wav
+!snn/board/play/cal_tone_1k_-6dBFS.wav
+snn/board/play/golden_gain/
+snn/rom/archive/
+.DS_Store
